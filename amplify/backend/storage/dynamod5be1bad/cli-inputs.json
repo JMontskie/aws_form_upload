@@ -1,0 +1,14 @@
+{
+  "resourceName": "dynamod5be1bad",
+  "tableName": "mnts-file-metadata",
+  "partitionKey": {
+    "fieldName": "filename",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "userId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

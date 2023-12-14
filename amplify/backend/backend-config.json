@@ -24,5 +24,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
+  },
+  "storage": {
+    "dynamod5be1bad": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
   }
 }
