@@ -25,12 +25,12 @@
   },
   "test": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-mntsfileupload-test-45439-authRole",
-      "UnauthRoleArn": "arn:aws:iam::242771580077:role/amplify-mntsfileupload-test-45439-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::242771580077:role/amplify-mntsfileupload-test-45439-authRole",
+      "AuthRoleName": "AmplifyProjectAuthRole",
+      "UnauthRoleArn": "arn:aws:iam::242771580077:role/myorganization/myteam/AmplifyProjectUnauthRole",
+      "AuthRoleArn": "arn:aws:iam::242771580077:role/myorganization/myteam/AmplifyProjectAuthRole",
       "Region": "ap-southeast-2",
       "DeploymentBucketName": "amplify-mntsfileupload-test-45439-deployment",
-      "UnauthRoleName": "amplify-mntsfileupload-test-45439-unauthRole",
+      "UnauthRoleName": "AmplifyProjectUnauthRole",
       "StackName": "amplify-mntsfileupload-test-45439",
       "StackId": "arn:aws:cloudformation:ap-southeast-2:242771580077:stack/amplify-mntsfileupload-test-45439/d5a52360-99f9-11ee-93aa-0ae75488c06d",
       "AmplifyAppId": "d2gjl3vg6wi4s0"
@@ -40,7 +40,11 @@
         "mntsfileupload5841027e": {}
       },
       "storage": {
-        "dynamod5be1bad": {}
+        "s377981438": {},
+        "dynamob8465dc4": {}
+      },
+      "api": {
+        "mntsfileuploadGraphQL": {}
       }
     }
   }

@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "mntsfileuploadGraphQL",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authmntsfileupload5841027e",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

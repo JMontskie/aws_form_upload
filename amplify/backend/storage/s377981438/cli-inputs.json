@@ -1,0 +1,13 @@
+{
+  "resourceName": "s377981438",
+  "policyUUID": "77981438",
+  "bucketName": "mntsfilebucket-s3",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}

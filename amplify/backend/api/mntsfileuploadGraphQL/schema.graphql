@@ -1,0 +1,24 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type File 
+  @model 
+  # @auth(
+  #  rules: [
+  #    { allow: owner, operations: [create] },
+  #    { allow: groups, groups: ["admin"], operations: [read, update, delete] }
+  #  ]
+  # )
+  {
+  id: ID! @primaryKey(sortKeyFields: ["userID", "fileName"])
+  userID: String!
+  fileName: String!
+  fileSize: String!
+  fileType: String!
+  description: String!
+  dateCreated: AWSDateTime!
+  dateModified: AWSDateTime!
+  s3Location: String! 
+}

@@ -1,53 +1,70 @@
 // Filename: App.js
 import './App.css';
+
+// Amplify imports
+
 import { Amplify } from 'aws-amplify';
-import React from 'react';
-import { Authenticator } from '@aws-amplify/ui-react';
+
+
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import config from './amplifyconfiguration.json';
+import { CognitoUserPool } from 'amazon-cognito-identity-js';
 
 
-import EmbeddedForm from './EmbeddedForm';
+// React imports
+import React, { useEffect, useState } from 'react';
+import { jwtDecode } from 'jwt-decode';
+
+// Component imports
+import AdminDashboard from './AdminDashboard';
+import UserDashboard from './UserDashboard';
 
 Amplify.configure(config);
 
+function App({ signOut, user }) {
+  const [userGroup, setUserGroup] = useState(null);
 
-const App = () => {
+  useEffect(() => {
+    const fetchCognitoGroups = async () => {
+      const userPool = new CognitoUserPool({
+        UserPoolId: 'ap-southeast-2_VFr01y6Nx',
+        ClientId: '7pd23vm6agkap8h690n4a52m72'
+      });
+
+      const cognitoUser = userPool.getCurrentUser();
+
+      if (cognitoUser != null) {
+        cognitoUser.getSession((err, session) => {
+          if (err) {
+            console.error(err);
+            return;
+          }
+
+          console.log('session validity: ' + session.isValid());
+
+          const sessionIdInfo = jwtDecode(session.getIdToken().jwtToken);
+          // console.log(sessionIdInfo['cognito:groups']);
+
+          const userGroups = sessionIdInfo['cognito:groups'];
+          // console.log(userGroups);
+          setUserGroup(userGroups);
+        });
+      }
+    };
+
+    fetchCognitoGroups();
+  }, []);
+
   return (
-    <Authenticator signUpAttributes={[
-      'email',
-    ]}>
-
-    {({ signOut, user }) => (
-      <main>
-        <nav className="navbar">
-          <div className="navbar-left">
-            <h1>File Uploading App</h1>    
-          </div>
-          <div className="navbar-right">
-            <div className="user-info">
-              <h4>Welcome! {user.username}</h4>
-              <button onClick={signOut}>Sign Out</button>
-            </div>
-          </div>
-        </nav>
-
-        <div className="form">
-          <EmbeddedForm />
-        </div>
-
-        {/* Add more code here */}
-        
-        <footer className="footer">
-          <p>&copy; 2023 File Uploading App. All rights reserved.</p>
-        </footer>
-      </main>
-    )}
-
-    </Authenticator>
+    <>
+      {userGroup && userGroup.includes('admin') ? (
+        <AdminDashboard />
+      ) : (
+        <UserDashboard />
+      )}
+    </>
   );
-};
+}
 
-
-export default App;
-
+export default withAuthenticator(App);

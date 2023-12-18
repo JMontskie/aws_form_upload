@@ -1,4 +1,11 @@
 export type AmplifyDependentResourcesAttributes = {
+  "api": {
+    "mntsfileuploadGraphQL": {
+      "GraphQLAPIEndpointOutput": "string",
+      "GraphQLAPIIdOutput": "string",
+      "GraphQLAPIKeyOutput": "string"
+    }
+  },
   "auth": {
     "mntsfileupload5841027e": {
       "AppClientID": "string",
@@ -11,7 +18,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "storage": {
-    "dynamod5be1bad": {
+    "dynamob8465dc4": {
       "Arn": "string",
       "Name": "string",
       "PartitionKeyName": "string",
@@ -20,6 +27,10 @@ export type AmplifyDependentResourcesAttributes = {
       "SortKeyName": "string",
       "SortKeyType": "string",
       "StreamArn": "string"
+    },
+    "s377981438": {
+      "BucketName": "string",
+      "Region": "string"
     }
   }
 }

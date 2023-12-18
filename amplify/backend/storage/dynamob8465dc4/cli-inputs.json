@@ -1,8 +1,8 @@
 {
-  "resourceName": "dynamod5be1bad",
-  "tableName": "mnts-file-metadata",
+  "resourceName": "dynamob8465dc4",
+  "tableName": "mnts-metadataDB",
   "partitionKey": {
-    "fieldName": "filename",
+    "fieldName": "id",
     "fieldType": "string"
   },
   "sortKey": {

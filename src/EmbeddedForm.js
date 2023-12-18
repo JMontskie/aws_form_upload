@@ -4,7 +4,7 @@ import 'formiojs/dist/formio.full.css'; // Import Form.io styles
 
 
 function EmbeddedForm() {
-  const formUrl = 'https://bpnkeziqwxxbkln.form.io/fileuploadform'; // Replace with your actual form URL
+  const formUrl = 'https://dewgfuiksrvttfo.form.io/fileuploadform'; // Replace with your actual form URL
 
   return (
     <div>
