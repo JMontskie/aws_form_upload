@@ -1,13 +1,13 @@
 // Filename: App.js
 import './App.css';
 import { Amplify } from 'aws-amplify';
-import React from 'react';
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import config from './amplifyconfiguration.json';
 
+// react imports
+import React, { useEffect, useState } from 'react';
 
-// import EmbeddedForm from './EmbeddedForm';
 
 Amplify.configure(config);
 

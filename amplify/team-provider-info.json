@@ -45,6 +45,12 @@
       },
       "api": {
         "mntsfileuploadGraphQL": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2gjl3vg6wi4s0",
+          "type": "manual"
+        }
       }
     }
   }

@@ -11,6 +11,7 @@ type File
   #    { allow: groups, groups: ["admin"], operations: [read, update, delete] }
   #  ]
   # )
+  @auth(rules: [{ allow: public }])
   {
   id: ID! @primaryKey(sortKeyFields: ["userID", "fileName"])
   userID: String!

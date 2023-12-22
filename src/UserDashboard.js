@@ -1,10 +1,15 @@
 // Filename: App.js
 import './App.css';
 import { Amplify } from 'aws-amplify';
-import React from 'react';
 import { Authenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
 import config from './amplifyconfiguration.json';
+
+
+// style imports
+import '@aws-amplify/ui-react/styles.css';
+
+// react imports
+import React from 'react';
 
 
 import EmbeddedForm from './EmbeddedForm';
@@ -13,6 +18,7 @@ Amplify.configure(config);
 
 
 const UserDashboard = () => {
+  
   return (
     <Authenticator signUpAttributes={[
       'email',
